@@ -1,28 +1,6 @@
 package hibernate.util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-
-
-//public class HibernateUtil {
-//    private static SessionFactory sessionFactory;
-//
-//    static {
-//        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml");
-//        ServiceRegistry registry = builder.build();
-//        sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-//    }
-//
-//    public static SessionFactory getSessionFactory() {
-//        return sessionFactory;
-//    }
-//}
-
-
-import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -49,14 +27,7 @@ public class HibernateUtil{
             throw new ExceptionInInitializerError(ex);
         }
     }
-
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
-
-    public static void shutdown() {
-        // Close caches and connection pools
-        getSessionFactory().close();
-    }
-
 }

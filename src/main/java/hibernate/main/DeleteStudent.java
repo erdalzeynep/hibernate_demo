@@ -19,7 +19,7 @@ public class DeleteStudent {
 
         Root<Student> root = query.from(Student.class);
         query.select(root);
-        query.where(builder.equal(root.get("id"), 6));
+        query.where(builder.equal(root.get("id"), 5));
         Student student = session.createQuery(query).uniqueResult();
 
         session.delete(student);
